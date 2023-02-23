@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Frontend Mentor - Connect Four game solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Connect Four game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/connect-four-game-6G8QVH923s). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the game rules
+- Play a game of Connect Four against another human player (alternating turns on the same computer)
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- See the discs animate into their position when a move is made
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![](./screenshots/initially.jpg)
+![](./screenshots/during-game.jpg)
+![](./screenshots/win.jpg)
+![](./screenshots/pausemenu.jpg)
+![](./screenshots/mainmenu.jpg)
+![](./screenshots/rules.jpg)
+![](./screenshots/phone.jpg)
+![](./screenshots/tablet.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+The process of implementing the game board involved a lot of experimentation and trial and error. Initially, I tried using a matrix to store the game state, but found that it was more difficult for me to manipulate and realised I am more comfortable with modular arithmetic.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To allow the player to place a disk in a column, I used event listeners to track the cell that the mouse was hovering over and, on click, placed the disk in the bottom available cell in that column. This required careful attention to detail to ensure that the disk was placed in the correct position and that the game state was updated accordingly.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Animating the falling disks was another challenge, as I had to ensure that the animation played smoothly and that the disk landed in the correct position. I used CSS animations and transitions to create a smooth, visually appealing effect.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The process of checking for a winner involved tracking the position of the most recently placed disk and then searching for four consecutive disks of the same color in the rows, columns, and diagonals below that position. This required careful consideration of the game state and a thorough understanding of how to manipulate arrays.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Using a Figma file as a reference was incredibly helpful in creating a visually appealing design for the game. It allowed me to experiment with different colors and styles before implementing them in the code. Overall, the process of implementing this game involved a lot of problem-solving and creativity, but was ultimately very rewarding.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built with
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- Tailwind CSS
 
-### Code Splitting
+### What I learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is my second React project, but the first one that was functionally heavy. Learned a lot about how to use and manipulate different React elements and components. Started learning programming a month ago, so there was definitely a steep learning curve, but it was exciting to see the progress I made with each step. One of the biggest challenges was figuring out how to efficiently update the game state and re-render the board after each move. I also had to learn how to incorporate animations into the game, which was a new and interesting experience.
 
-### Analyzing the Bundle Size
+This project was a great opportunity for me to gain more experience with React and improve my programming skills. It also helped me understand the importance of breaking down a problem into smaller, manageable tasks and utilizing external resources like documentation and videos to help guide the process. With each project, I feel more confident in my abilities and look forward to tackling more complex challenges in the future.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All in all, this was a fun 3 days project.
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend Mentor - [@lehoangha9](https://www.frontendmentor.io/profile/lehoanghai9)
