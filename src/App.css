@@ -1,0 +1,91 @@
+html{
+  background-color: #7945FF;
+  overflow-x: hidden;
+}
+img {
+  pointer-events: none;
+}
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.drop {
+  animation-name: dropAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(.66,.65,.18,.44);
+}
+
+@keyframes dropAnimation {
+  0% { transform: translateY(-500px); opacity: 0.5;}
+  60% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(-15px); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.shadoww{
+  box-shadow: 0 9px #000000;
+}
+
+.bouncey {
+  animation: bounce 0.7s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+.bouncey2 {
+  animation: bounce2 1s 2;
+}
+
+@keyframes bounce2 {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translateY(20%);
+    animation-timing-function: ease-out;
+  }
+}
+
+.my-div {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards,
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.menubutton:hover {
+  border-color:#5C2DD5;
+  box-shadow: 0 9px #5C2DD5;
+}
+
+.menubutton:active {
+  box-shadow: 0 5px #5C2DD5;
+  transform: translateY(4px);
+}
+
+
+.rulebutton:active{
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+}
