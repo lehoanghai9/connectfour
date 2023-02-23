@@ -13,11 +13,11 @@ import { PausedMenu } from "./PausedMenu"
 
 export const Board = () => {
 
-  const {playerTurn, setWins, wins, winner, setWinner, paused, seconds, setSeconds, draw} = useContext(GameContext)
+  const {playerTurn, setWins, wins, winner, setWinner, paused, seconds, setSeconds, draw, isWonOrDraw} = useContext(GameContext)
 
   useEffect(() => {
     const countdownTimer = setInterval(() => {
-      if (!paused && !draw && seconds > 0) {
+      if (!paused && !draw && seconds && !isWonOrDraw > 0) {
         setSeconds((prevSeconds) => prevSeconds - 1);
       }
     }, 1000);
@@ -44,13 +44,13 @@ export const Board = () => {
       <PausedMenu/>
 
       <div className="hidden lg:flex flex-col absolute left-[-200px] top-[220px] w-[140px] h-[160px] bg-white rounded-[20px] border-4 shadoww items-center">
-        <img src={player1} className={`${playerTurn === 1 && winner === 0 && paused === false ? "bouncey" : ""} w-[54px] h-[59px] mt-[-30px]`} alt=""></img>
+        <img src={player1} className={`${playerTurn === 1 && winner === 0 && paused === false && !isWonOrDraw ? "bouncey" : ""} w-[54px] h-[59px] mt-[-30px]`} alt=""></img>
         <h2 className="text-center text-xl mt-2">PLAYER 1</h2>
         <h1 className="text-center text-6xl mt-1">{wins[0]}</h1>
       </div>
       
       <div className="hidden lg:flex flex-col absolute right-[-200px] top-[220px] w-[140px] h-[160px] bg-white rounded-[20px] border-4 shadoww items-center">
-      <img src={player2} className={`w-[54px] h-[59px] mt-[-30px] ${playerTurn === 2 && winner === 0 && paused === false ? "bouncey" : ""}`} alt=""></img>
+      <img src={player2} className={`w-[54px] h-[59px] mt-[-30px] ${playerTurn === 2 && winner === 0 && paused === false && !isWonOrDraw ? "bouncey" : ""}`} alt=""></img>
         <h2 className="text-center text-xl mt-2">PLAYER 2</h2>
         <h1 className="text-center text-6xl mt-1">{wins[1]}</h1>
 

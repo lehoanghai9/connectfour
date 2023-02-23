@@ -29,6 +29,8 @@ export default function TheGame() {
 
   const [playerTurn, setPlayerTurn] = useState(1);
 
+  let isWonOrDraw = winner !== 0 || (gameState.slice(0, 7).every(element => element !== 0) && winner === 0)
+
   const turnChange = () => {
     if (playerTurn === 1){
       setPlayerTurn(2)
@@ -40,7 +42,7 @@ export default function TheGame() {
   return (
     <div className="flex flex-col justify-center items-center ">
       <div>
-        <GameContext.Provider value={{selectedColumn, setSelectedColumn, initialState, gameState, setGameState, playerTurn, turnChange, connected, setConnected, wins, setWins, winner, setWinner, paused, setPaused, seconds, setSeconds, draw, setDraw}}>
+        <GameContext.Provider value={{selectedColumn, setSelectedColumn, initialState, gameState, setGameState, playerTurn, turnChange, connected, setConnected, wins, setWins, winner, setWinner, paused, setPaused, seconds, setSeconds, draw, setDraw, isWonOrDraw}}>
           <Menu/>
           <PlayerBarMobile/>
           <Board/>

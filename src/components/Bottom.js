@@ -11,9 +11,10 @@ export const Bottom = () => {
     setWinner(0);
     setConnected([]);
     setSeconds(30);
+    isWonOrDraw = false;
   } 
 
-  const {gameState, playerTurn, winner, setGameState, initialState, setConnected, setWinner, seconds, setSeconds} = useContext(GameContext);
+  const {gameState, playerTurn, winner, setGameState, initialState, setConnected, setWinner, seconds, setSeconds, isWonOrDraw} = useContext(GameContext);
 
   return (
     gameState.slice(0, 7).every(element => element !== 0) && winner === 0 ? (
